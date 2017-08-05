@@ -1,12 +1,8 @@
-<main class="container-fluid content-wrapper">
+<main class="container content-wrapper">
   <div class="row">
-    <div class="col-sm-10 col-sm-offset-1">
-      <div class="row">
-        <div class="col-md-8">
-
-
-        </div>
-      </div>
-    </div>
-  </div>
+    <div class="col-md-6 col-md-offset-3 subpage-content">
+      <h2 class="title hollow-headline"><?php the_title(); ?></h2>
+      <?php the_content(); ?>
+    </div><!-- col -->
+  </div><!-- row -->
 </main>

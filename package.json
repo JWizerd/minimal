@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/impactstudio/ppp#readme",
   "dependencies": {
+    "cssnano": "^3.10.0",
     "grunt": "^1.0.1"
   },
   "devDependencies": {
