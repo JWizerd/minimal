@@ -99,6 +99,10 @@ $video_path: "../../video/";
   display: flex;
 }
 
+.hover-bw {
+  filter: grayscale(100%);
+}
+
 .justify {
   text-align: justify;
 }
@@ -151,7 +155,6 @@ $video_path: "../../video/";
   color: $cream;
   border-radius: 0;
   padding: 6px 16px;
-  font-size: 22px;
   @include transition(ease-out, 0.5s);
 }
 
@@ -255,7 +258,6 @@ $video_path: "../../video/";
 }
 
 body {
-  background-color: $cream;
   color: $dark;
   box-sizing: border-box;
   font-family: $raleway;
@@ -340,7 +342,7 @@ header {}
 .logo-wrap {
   a {
     &:hover .logo {
-      transform: rotate(360deg);
+      // transform: rotate(360deg);
     }
   }
 }
@@ -350,6 +352,8 @@ header {}
   h1 {
       margin: 5px 0;
       color: $cream;
+      font-size: 26px;
+      font-style: italic;
   }
   // background: 
   //   linear-gradient(
@@ -397,16 +401,16 @@ header {}
 
 .menu {
   width: 100%;
-  border-top: 1px solid;
+  border-top: 3px solid;
   li {
     display: inline-block;
     text-transform: capitalize;
     padding: 9px 15px;
-    border-right: 1px solid #333;
     font-size: 13px;
     letter-spacing: .6px;
     a {
       color: $dark;
+      font-weight: bold;
       &:hover {
         color: $pumpkin;
       }
@@ -415,20 +419,23 @@ header {}
 }
 
 .slogan {
-  font-size: 16px;
+  font-size: 19px;
   font-style: italic;
-  font-weight: bold;
-  strong {
-    text-decoration: underline;
-  }
+  font-weight: lighter;
+  padding: 20px 0;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
 }
 
 /*--------------------------------
 3.0 HOME
 --------------------------------*/
 
+.home-content-wrapper {
+  padding-top: 20px;
+}
+
 .post-snippet {
-  border: 2px solid $dark;
   h2 {
     font-weight: bold;
     a {
@@ -575,7 +582,29 @@ footer {
 
 /*--------------------------------
 6.0 POSTS
---------------------------------
+--------------------------------*/
+
+.post {
+
+  .post-divider {
+    margin-top: 5px;
+  }
+
+  .post-meta {
+    margin-bottom: 0;
+  }
+
+  .thumbnail-post-link:hover {
+    &:hover .featured-post-thumbnail {
+      @extend .hover-bw;
+    }
+  }
+
+  .featured-post-thumbnail {
+    transition: ease all .4s;
+  }
+
+}
 
 /*--------------------------------
 6.1 COMMENTS

@@ -11,6 +11,8 @@ add_theme_support( 'gallery' );
 // different ways of showing post content
 // add_theme_support( 'post-formats', array('video', 'aside', 'gallery', 'image'));
 
+add_theme_support( 'post-thumbnails' );
+
 //register navigations
 add_action( 'after_setup_theme', 'wpt_setup' );
     if ( ! function_exists( 'wpt_setup' ) ):
