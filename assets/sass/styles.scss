@@ -326,7 +326,9 @@ hr {
 2.0 HEADER
 --------------------------------*/
 
-header {}
+#menu-primary {
+  margin-bottom: 0;
+}
 
 .hamburger {
   background: url("#{$image_path}hamburger.png") center center no-repeat;
@@ -341,6 +343,10 @@ header {}
 }
 
 .logo-wrap {
+  h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
   a {
     &:hover .logo {
       // transform: rotate(360deg);
@@ -415,7 +421,6 @@ header {}
 
 .slogan {
   font-size: 19px;
-  font-style: italic;
   font-weight: lighter;
   padding: 20px 0;
   border-top: 2px solid #ddd;
@@ -449,8 +454,6 @@ header {}
     text-align: center;
     padding: 20px;
     margin-bottom: 0;
-    border-bottom: 2px solid;
-    border-top: 2px solid;
   }
   .posts {
     overflow: hidden;
