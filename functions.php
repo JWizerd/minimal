@@ -28,6 +28,7 @@ function theme_styles() {
 	wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/build/css/styles.css' );
 	wp_enqueue_style('print_css', get_template_directory_uri() . '/assets/css/print.css' );
   wp_enqueue_style('animate_css', get_template_directory_uri() . '/assets/css/animate.min.css' );
+  wp_enqueue_style('questrial_fonts', 'https://fonts.googleapis.com/css?family=Questrial' );
 }
 
 add_action('wp_enqueue_scripts', 'theme_styles' );
@@ -120,48 +121,9 @@ function add_gcf_interface() {
 	add_options_page('Company Details', 'Company Details', '8', 'company-details', 'editcompanydetails');
 }
 
-function editcompanydetails() {
-	?>
-	<div class='wrap'>
-	<h2>Company Details</h2>
-	<form method="post" action="options.php">
-	<?php wp_nonce_field('update-options') ?>
+function custom_excerpt_length( $length ) {
+  return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-	<p><strong>Company Name:</strong><br />
-	<input type="text" name="companyname" size="45" value="<?php echo get_option('companyname'); ?>" /></p>
 
-	<p><strong>Business Address:</strong><br />
-	<input type="text" name="businessaddress" size="45" value="<?php echo get_option('businessaddress'); ?>" /></p>
-
-	<p><strong>Telephone:</strong><br />
-	<input type="text" name="phonenumber" size="45" value="<?php echo get_option('phonenumber'); ?>" /></p>
-
-	<p><strong>Email Address:</strong><br />
-	<input type="email" name="emailaddress" size="45" value="<?php echo get_option('emailaddress'); ?>" /></p>
-
-  <p><strong>Certification: (i.e. ISO 9001:2008)</strong><br />
-	<input type="text" name="certification" size="45" value="<?php echo get_option('certification'); ?>" /></p>
-
-  <p><strong>Link to Certification: (ex. take link from uploaded cert and paste it here)</strong><br />
-	<input type="text" name="certificationlink" size="45" value="<?php echo get_option('certificationlink'); ?>" /></p>
-
-  <p><strong>Facebook Link</strong><br />
-	<input type="text" name="facebook" size="45" value="<?php echo get_option('facebook'); ?>" /></p>
-
-  <p><strong>Google My Business Link</strong><br />
-	<input type="text" name="google" size="45" value="<?php echo get_option('google'); ?>" /></p>
-
-  <p><strong>LinkedIn Link</strong><br />
-	<input type="text" name="linkedin" size="45" value="<?php echo get_option('linkedin'); ?>" /></p>
-
-  <p><strong>Google Maps Link</strong><br />
-	<input type="text" name="gmaps" size="45" value="<?php echo get_option('gmaps'); ?>" /></p>
-
-	<p><input class="button button-primary" type="submit" name="Submit" value="Update Options" /></p>
-
-	<input type="hidden" name="action" value="update" />
-	<input type="hidden" name="page_options" value="companyname,businessaddress,phonenumber,emailaddress, certification,certificationlink,facebook,google,linkedin, gmaps" />
-
-	</form>
-	</div>
-<?php } ?>
