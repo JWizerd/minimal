@@ -55,58 +55,58 @@ add_action('wp_enqueue_scripts', 'theme_js' );
 
 
 // custom post type
-add_action('init', 'create_core_capability_post_type');
-function create_core_capability_post_type() {
-  register_post_type(
-    'capability',
-    array(
-      'labels'      => array(
-        'name'          => __('Core Capabilities'),
-        'singular_name' => __('Core Capability')
-      ),
-      'public'      => true,
-      'has_archive' => false,
-      'rewrite'     => array('slug' => 'core-capabilities'),
-      'supports'    => array('title', 'custom-fields', 'editor', 'thumbnail')
-    )
-  );
-}
+// add_action('init', 'create_core_capability_post_type');
+// function create_core_capability_post_type() {
+//   register_post_type(
+//     'capability',
+//     array(
+//       'labels'      => array(
+//         'name'          => __('Core Capabilities'),
+//         'singular_name' => __('Core Capability')
+//       ),
+//       'public'      => true,
+//       'has_archive' => false,
+//       'rewrite'     => array('slug' => 'core-capabilities'),
+//       'supports'    => array('title', 'custom-fields', 'editor', 'thumbnail')
+//     )
+//   );
+// }
 
-// custom post type
-add_action('init', 'create_markets_post_type');
-function create_markets_post_type() {
-  register_post_type(
-    'markets',
-    array(
-      'labels'      => array(
-        'name'          => __('Markets'),
-        'singular_name' => __('Market')
-      ),
-      'public'      => true,
-      'has_archive' => false,
-      'rewrite'     => array('slug' => 'markets-we-serve'),
-      'supports'    => array('title', 'custom-fields', 'editor', 'thumbnail')
-    )
-  );
-}
+// // custom post type
+// add_action('init', 'create_markets_post_type');
+// function create_markets_post_type() {
+//   register_post_type(
+//     'markets',
+//     array(
+//       'labels'      => array(
+//         'name'          => __('Markets'),
+//         'singular_name' => __('Market')
+//       ),
+//       'public'      => true,
+//       'has_archive' => false,
+//       'rewrite'     => array('slug' => 'markets-we-serve'),
+//       'supports'    => array('title', 'custom-fields', 'editor', 'thumbnail')
+//     )
+//   );
+// }
 
-// custom post type
-add_action('init', 'create_slides_post_type');
-function create_slides_post_type() {
-  register_post_type(
-    'slides',
-    array(
-      'labels'      => array(
-        'name'          => __('Slides'),
-        'singular_name' => __('Slide')
-      ),
-      'public'      => true,
-      'has_archive' => true,
-      'supports'    => array('title', 'custom-fields', 'editor', 'thumbnail'),
-      'exclude_from_search' => true
-    )
-  );
-}
+// // custom post type
+// add_action('init', 'create_slides_post_type');
+// function create_slides_post_type() {
+//   register_post_type(
+//     'slides',
+//     array(
+//       'labels'      => array(
+//         'name'          => __('Slides'),
+//         'singular_name' => __('Slide')
+//       ),
+//       'public'      => true,
+//       'has_archive' => true,
+//       'supports'    => array('title', 'custom-fields', 'editor', 'thumbnail'),
+//       'exclude_from_search' => true
+//     )
+//   );
+// }
 
 // register widgets | widgets located in widgets.php
 if ($wp_version >= 2.8) require_once(TEMPLATEPATH.'/widgets.php');
@@ -114,13 +114,6 @@ if ($wp_version >= 2.8) require_once(TEMPLATEPATH.'/widgets.php');
 // remove special characters from strings
 function remove_special_chars($string) {
   return preg_replace('/[^A-Za-z0-9\-]/', '', $string);
-}
-
-//Custom Theme Settings
-add_action('admin_menu', 'add_gcf_interface');
-
-function add_gcf_interface() {
-	add_options_page('Company Details', 'Company Details', '8', 'company-details', 'editcompanydetails');
 }
 
 function custom_excerpt_length( $length ) {

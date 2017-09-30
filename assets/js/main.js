@@ -27,11 +27,29 @@
     });
   }
 
+  // GET all posts via ajax
+  function getPosts(endpoint) {
+    $.ajax({
+          type: "GET",
+          url: endpoint,
+          success: function(response) {
+            console.log(response)
+          },
+          error: function (xhr, ajaxOptions, thrownError) {
+            if(xhr.status==403) {
+              console.log('403 forbidden')
+            }
+          },
+          timeout: 5000
+        })
+  }
+
   // run javascript after other files have loaded
   $(document).ready(function(){
     if (window.outerWidth < 991) {
       // mobileMenu()
     }
+    getPosts('./wp-json/wp/v2/posts')
   });
 
 })( jQuery );

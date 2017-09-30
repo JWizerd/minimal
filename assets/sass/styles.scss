@@ -17,7 +17,7 @@ NAVIGATION: css menus can be great for breaking up your code into modules as wel
 
 3.0 HOME
 
-4.0 SIDEBAR
+4.0 ARCHIVE
 
 5.0 FOOTER
 
@@ -487,9 +487,20 @@ hr {
 }
 
 /*--------------------------------
-4.0 SIDEBAR
+4.0 ARCHIVE
 --------------------------------*/
-
+.archives {
+  li {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 10px;
+    a {
+      color: $dark;
+      font-family: $libre;
+      font-size: 18px;
+    }
+  }
+}
 /*--------------------------------
 5.0 FOOTER
 --------------------------------*/
