@@ -30,7 +30,7 @@
   // run javascript after other files have loaded
   $(document).ready(function(){
     if (window.outerWidth < 991) {
-      mobileMenu()
+      // mobileMenu()
     }
   });
 

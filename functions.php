@@ -29,6 +29,8 @@ function theme_styles() {
 	wp_enqueue_style('print_css', get_template_directory_uri() . '/assets/css/print.css' );
   wp_enqueue_style('animate_css', get_template_directory_uri() . '/assets/css/animate.min.css' );
   wp_enqueue_style('questrial_fonts', 'https://fonts.googleapis.com/css?family=Questrial' );
+
+  wp_enqueue_style('libre_font', 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' );
 }
 
 add_action('wp_enqueue_scripts', 'theme_styles' );

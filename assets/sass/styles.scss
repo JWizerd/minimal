@@ -58,6 +58,7 @@ $nunito: 'Nunito Sans', sans-serif;
 $raleway: 'Raleway', 'Nunito-Sans';
 $dark: #333;
 $questrial: 'Questrial', sans-serif;
+$libre: 'Libre Baskerville', serif;
 
 
 $image_path: "../../img/";
@@ -268,6 +269,12 @@ h1, h2, h3, h4 {
   margin-top: 0;
 }
 
+h1, 
+.post-title,
+.post-title a {
+  font-family: $libre !important;
+}
+
 p {
   line-height: 27px;
   margin-bottom: 20px;
@@ -319,6 +326,10 @@ hr {
 
 #menu-primary {
   margin-bottom: 0;
+}
+
+.menu li a {
+  font-size: 16px;
 }
 
 .hamburger {
@@ -484,6 +495,7 @@ hr {
 --------------------------------*/
 
 footer {
+  padding: 15px 0;
   color: $cream;
   background: $dark;
   text-align: center;
@@ -513,6 +525,7 @@ footer {
 .post {
 
   .post-title {
+    font-family: $libre;
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 2px;
@@ -607,7 +620,7 @@ footer {
   }
 
   .primary-nav {
-    display: none;
+    // display: none;
   }
 
   .mobile-menu {
@@ -633,13 +646,9 @@ footer {
     display: inline-block;
   }
 
-  .menu li:nth-last-child(2) {
-    padding-right: 0;
-  }
-
-  .menu li a {
-    font-size: 12px;
-  }
+  // .menu li:nth-last-child(2) {
+  //   padding-right: 0;
+  // }
 
   .subpage-content {
     display: flex;
@@ -678,7 +687,11 @@ footer {
 
 @media all and (max-width: 780px) {}
 
-@media all and (max-width: 768px) {}
+@media all and (max-width: 767px) {
+  .menu li a {
+    font-size: 12px;
+  }
+}
 
 @media all and (max-width: 700px) {
   .hero {
@@ -704,13 +717,13 @@ footer {
     padding: 0 0 20px 0;
   }
 
-  .primary-nav li {
-    display: block;
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 10px;
-    width: 100%;
-  }
+  // .primary-nav li {
+  //   display: block;
+  //   font-size: 18px;
+  //   text-align: center;
+  //   margin-bottom: 10px;
+  //   width: 100%;
+  // }
 
   .main-navgation {
     padding-bottom: 0;
@@ -724,6 +737,18 @@ footer {
 @media all and (max-width: 661px) {}
 
 @media all and (max-width: 610px) {}
+
+@media all and (max-width: 500px) {
+  footer span {
+    margin-bottom: 0;
+    display: block;
+    font-size: 10px;
+    padding-bottom: 7px;
+    &:after {
+      content: '';
+    }
+  }
+}
 
 @media all and (max-width: 440px) {
   .hero {
